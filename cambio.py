@@ -16,17 +16,15 @@ if response.status_code == 200:
     
     print("Acessando dados do dia: %s/%s/%s"% (day[8:], day[5:7], day[:4]))
     
-    print("Euro: {:.2f}".format(dados["rates"]["EUR"]))
-    
-    print("Dolar x Real {:.2f}".format(dados["rates"]["BRL"] / dados["rates"]["USD"]))
-    
-    print("Dolar: {:.2f}".format(dados["rates"]["USD"]))
-    
-    print("Bitcoin: {:.2f}".format(dados["rates"]["BTC"]))
+    #print("Euro: {:.2f}".format(dados["rates"]["EUR"]))
+    euro = (dados["rates"]["EUR"])
+    dollar = dados["rates"]["BRL"] / dados["rates"]["USD"]
+    btc = (dados["rates"]["BTC"])
+    #print("Dolar x Real {:.2f}".format(dados["rates"]["BRL"] / dados["rates"]["USD"]))
+    #print("Dolar: {:.2f}".format(dados["rates"]["USD"]))
+    #print("Bitcoin: {:.2f}".format(dados["rates"]["BTC"]))
 
-    df = pd.DataFrame(dados)
-
+    df = pd.DataFrame({'Moedas': ['Euro', 'Dolar', 'BitCoin'], "Valores":[euro, dollar, btc]})
 
 print(df)
-
-#df.to_csv()
+df.to_csv("valores.csv", index= False, sep=';')
