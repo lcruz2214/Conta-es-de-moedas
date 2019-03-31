@@ -12,7 +12,7 @@ API utilizada: [FIXER.IO](https://fixer.io/)
 ```sh
 pip install requests
 pip install json
-pip pandas
+pip install pandas
 ```
 ### Arquivo gerado
 ![Aplicação](Capturar.PNG)
